@@ -9,7 +9,7 @@
 #import "SimpleBrowserViewController.h"
 
 @implementation SimpleBrowserViewController
-@synthesize webView;
+@synthesize webView, spinner;
 
 -(IBAction)goBack:(id)sender {
     if ([webView canGoBack]) {
@@ -71,6 +71,14 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    [spinner startAnimating];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    [spinner stopAnimating];
 }
 
 @end

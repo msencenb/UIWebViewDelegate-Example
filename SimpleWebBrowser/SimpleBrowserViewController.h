@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SimpleBrowserViewController : UIViewController {
+@interface SimpleBrowserViewController : UIViewController <UIWebViewDelegate>{
     IBOutlet UIWebView *webView;
+    IBOutlet UIActivityIndicatorView *spinner;
 }
 
+@property(nonatomic,retain)IBOutlet UIActivityIndicatorView *spinner;
 @property(nonatomic,retain)IBOutlet UIWebView *webView;
 
 -(IBAction)goBack:(id)sender;
